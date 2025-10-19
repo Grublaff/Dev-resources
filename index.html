@@ -85,6 +85,54 @@
             cursor: pointer;
             text-align: center;
         }
+
+    /* Accordion toggle button */
+    .accordion-toggle {
+        cursor: pointer;
+        color: var(--text-color);
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        font-size: 1rem;
+        text-align: left;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .accordion-toggle:hover {
+        background: var(--border-color);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion-toggle span {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    /* Accordion content */
+    .accordion-content {
+        display: none;
+        padding: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+        margin-top: 0.5rem;
+    }
+
+    .accordion-content img {
+        margin-bottom: 1rem;
+    }
+
+    .accordion-content.hidden {
+        display: none;
+    }
+
+    .accordion-content:not(.hidden) {
+        display: block;
+    }
     </style>
 </head>
 
@@ -102,6 +150,7 @@
             There are also a few books that people have recommended to me that I haven't gotten around to reading yet.
         </p>
     </section>
+
     <section>
         <h2>Craftmanship and Quality</h2>
         <p>
@@ -109,170 +158,181 @@
             most things I dont belive that there is a single right way to do things, but these books provide solid
             guidelines and thoughts that can be reflected upon.
         </p>
+        <button class="accordion-toggle" onclick="toggleAccordion(this)">
+            <span>►</span> Show Books
+        </button>
+        <div class="accordion-content hidden">
+            <div class="book">
+                <img class="cover" src="https://m.media-amazon.com/images/I/41jEbK-jG+L._SX374_BO1,204,203,200_.jpg"
+                    alt="Clean Code Cover">
+                <div class="book-info">
+                    <h3>Clean Code</h3>
+                    <p class="meta">
+                        Author: Robert C. Martin<br>
+                        ISBN: 9780132350884<br>
+                        <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Amazon Link</a>
+                    </p>
+                </div>
+                <div class="reflection">
+                    Planning to revisit the sections about code smells and refactoring practices.
+                </div>
+            </div>
+            
+            <div class="book">
+                <img class="cover" src="https://m.media-amazon.com/images/I/61GHrDrumhL._SL1000_.jpg"
+                    alt="The Clean Coder">
+                <div class="book-info">
+                    <h3>The Clean Coder</h3>
+                    <p class="meta">
+                        Author: Robert C. Martin<br>
+                        ISBN: 9780132350884<br>
+                        <a href="https://www.amazon.se/-/en/Robert-Martin/dp/0137081073" target="_blank">Amazon Link</a>
+                    </p>
+                </div>
+                <div class="reflection">
+                    Planning to revisit the sections about code smells and refactoring practices.
+                </div>
+            </div>
+            
+            <div class="book">
+                <img class="cover" src="https://m.media-amazon.com/images/I/71stxGw9JgL._SL1500_.jpg"
+                    alt="Clean Architecture: A Craftsman's Guide to Software Structure and Design">
+                <div class="book-info">
+                    <h3>Clean Architecture: A Craftsman's Guide to Software Structure and Design</h3>
+                    <p class="meta">
+                        Author: Robert C. Martin<br>
+                        ISBN: 0134494164<br>
+                        <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
+                    </p>
+                </div>
+                <div class="reflection">
+                    Planning to revisit the sections about code smells and refactoring practices.
+                </div>
+            </div>
+            
+            <div class="book">
+                <img class="cover" src="https://m.media-amazon.com/images/I/61MYY5PRibL._SL1500_.jpg"
+                    alt="Code Complete: A Practical Handbook of Software Construction r">
+                <div class="book-info">
+                    <h3>Code Complete: A Practical Handbook of Software Construction </h3>
+                    <p class="meta">
+                        Author: Steve McConnell<br>
+                        ISBN: 0735619670<br>
+                        <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
+                    </p>
+                </div>
+                <div class="reflection">
+                    Planning to revisit the sections about code smells and refactoring practices.
+                </div>
+            </div>
+            
+            <div class="book">
+                <img class="cover" src="https://m.media-amazon.com/images/I/71TGolfP8fL._SL1500_.jpg"
+                    alt="Refactoring: Improving the Design of Existing Code">
+                <div class="book-info">
+                    <h3>Refactoring: Improving the Design of Existing Code</h3>
+                    <p class="meta">
+                        Author: Martin Fowler<br>
+                        ISBN: 0201485672<br>
+                        <a href="https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672" target="_blank">Amazon Link</a>
+                    </p>
+                </div>
+                <div class="reflection">
+                    Planning to revisit the sections about code smells and refactoring practices.
+                </div>
+            </div>
+            
+            <div class="book">
+                <img class="cover" src="https://m.media-amazon.com/images/I/71CcLsUvplL._SL1500_.jpg"
+                    alt="Refactoring to Patterns">
+                <div class="book-info">
+                    <h3>Refactoring to Patterns</h3>
+                    <p class="meta">
+                        Author:  Joshua Kerievsky <br>
+                        ISBN: 0321213351<br>
+                        <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
+                    </p>
+                </div>
+                <div class="reflection">
+                    Planning to revisit the sections about code smells and refactoring practices.
+                </div>
+            </div>
+            
+            <div class="book">
+                <img class="cover" src="https://m.media-amazon.com/images/I/81AxMld0fVL._SL1500_.jpg"
+                    alt="Test-Driven Development">
+                <div class="book-info">
+                    <h3>Test Driven Development: By Example</h3>
+                    <p class="meta">
+                        Author: Kent Beck<br>
+                        ISBN: 9780321146533<br>
+                        <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
+                    </p>
+                </div>
+                <div class="reflection">
+                    Planning to revisit the sections about code smells and refactoring practices.
+                </div>
+            </div>
+            
+            <div class="book">
+                <img class="cover" src="https://m.media-amazon.com/images/I/81r69ARQevL._SL1500_.jpg"
+                    alt="Clean Code Cover">
+                <div class="book-info">
+                    <h3>Agile Software Development, Principles, Patterns, and Practices</h3>
+                    <p class="meta">
+                        Author: Robert C. Martin<br>
+                        ISBN: 0135974445<br>
+                        <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
+                    </p>
+                </div>
+                <div class="reflection">
+                    Planning to revisit the sections about code smells and refactoring practices.
+                </div>
+            </div>
+            
+            <div class="book">
+                <img class="cover" src="https://m.media-amazon.com/images/I/71f1jieYHNL._SL1043_.jpg"
+                    alt="The Pragmatic Programmer Cover">
+                <div class="book-info">
+                    <h3>The Pragmatic Programmer</h3>
+                    <p class="meta">
+                        Author: Andrew Hunt & David Thomas<br>
+                        ISBN: 0135957052<br>
+                        <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
+                    </p>
+                </div>
+                <div class="reflection">
+                    Planning to revisit the sections about code smells and refactoring practices.
+                </div>
+            </div>
+            
+            <div class="book">
+                <img class="cover" src="https://m.media-amazon.com/images/I/41FS+-iUXiL.jpg"
+                    alt="The Object-Oriented Thought Proces Cover">
+                <div class="book-info">
+                    <h3>The Object-Oriented Thought Proces</h3>
+                    <p class="meta">
+                        Author: Matt Weisfeld<br>
+                        ISBN: 9780321861276<br>
+                        <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
+                    </p>
+                </div>
+                <div class="reflection">
+                    Planning to revisit the sections about code smells and refactoring practices.
+                </div>
+            </div>
+        </div>
 
-        <div class="book">
-            <img class="cover" src="https://m.media-amazon.com/images/I/41jEbK-jG+L._SX374_BO1,204,203,200_.jpg"
-                alt="Clean Code Cover">
-            <div class="book-info">
-                <h3>Clean Code</h3>
-                <p class="meta">
-                    Author: Robert C. Martin<br>
-                    ISBN: 9780132350884<br>
-                    <a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Amazon Link</a>
-                </p>
-            </div>
-            <div class="reflection">
-                Planning to revisit the sections about code smells and refactoring practices.
-            </div>
-        </div>
-        
-        <div class="book">
-            <img class="cover" src="https://m.media-amazon.com/images/I/61GHrDrumhL._SL1000_.jpg"
-                alt="The Clean Coder">
-            <div class="book-info">
-                <h3>The Clean Coder</h3>
-                <p class="meta">
-                    Author: Robert C. Martin<br>
-                    ISBN: 9780132350884<br>
-                    <a href="https://www.amazon.se/-/en/Robert-Martin/dp/0137081073" target="_blank">Amazon Link</a>
-                </p>
-            </div>
-            <div class="reflection">
-                Planning to revisit the sections about code smells and refactoring practices.
-            </div>
-        </div>
-        
-        <div class="book">
-            <img class="cover" src="https://m.media-amazon.com/images/I/71stxGw9JgL._SL1500_.jpg"
-                alt="Clean Architecture: A Craftsman's Guide to Software Structure and Design">
-            <div class="book-info">
-                <h3>Clean Architecture: A Craftsman's Guide to Software Structure and Design</h3>
-                <p class="meta">
-                    Author: Robert C. Martin<br>
-                    ISBN: 0134494164<br>
-                    <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
-                </p>
-            </div>
-            <div class="reflection">
-                Planning to revisit the sections about code smells and refactoring practices.
-            </div>
-        </div>
-        
-        <div class="book">
-            <img class="cover" src="https://m.media-amazon.com/images/I/61MYY5PRibL._SL1500_.jpg"
-                alt="Code Complete: A Practical Handbook of Software Construction r">
-            <div class="book-info">
-                <h3>Code Complete: A Practical Handbook of Software Construction </h3>
-                <p class="meta">
-                    Author: Steve McConnell<br>
-                    ISBN: 0735619670<br>
-                    <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
-                </p>
-            </div>
-            <div class="reflection">
-                Planning to revisit the sections about code smells and refactoring practices.
-            </div>
-        </div>
-        
-        <div class="book">
-            <img class="cover" src="https://m.media-amazon.com/images/I/71TGolfP8fL._SL1500_.jpg"
-                alt="Refactoring: Improving the Design of Existing Code">
-            <div class="book-info">
-                <h3>Refactoring: Improving the Design of Existing Code</h3>
-                <p class="meta">
-                    Author: Martin Fowler<br>
-                    ISBN: 0201485672<br>
-                    <a href="https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672" target="_blank">Amazon Link</a>
-                </p>
-            </div>
-            <div class="reflection">
-                Planning to revisit the sections about code smells and refactoring practices.
-            </div>
-        </div>
-        
-        <div class="book">
-            <img class="cover" src="https://m.media-amazon.com/images/I/71CcLsUvplL._SL1500_.jpg"
-                alt="Refactoring to Patterns">
-            <div class="book-info">
-                <h3>Refactoring to Patterns</h3>
-                <p class="meta">
-                    Author:  Joshua Kerievsky <br>
-                    ISBN: 0321213351<br>
-                    <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
-                </p>
-            </div>
-            <div class="reflection">
-                Planning to revisit the sections about code smells and refactoring practices.
-            </div>
-        </div>
-        
-        <div class="book">
-            <img class="cover" src="https://m.media-amazon.com/images/I/81AxMld0fVL._SL1500_.jpg"
-                alt="Test-Driven Development">
-            <div class="book-info">
-                <h3>Test Driven Development: By Example</h3>
-                <p class="meta">
-                    Author: Kent Beck<br>
-                    ISBN: 9780321146533<br>
-                    <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
-                </p>
-            </div>
-            <div class="reflection">
-                Planning to revisit the sections about code smells and refactoring practices.
-            </div>
-        </div>
-        
-        <div class="book">
-            <img class="cover" src="https://m.media-amazon.com/images/I/81r69ARQevL._SL1500_.jpg"
-                alt="Clean Code Cover">
-            <div class="book-info">
-                <h3>Agile Software Development, Principles, Patterns, and Practices</h3>
-                <p class="meta">
-                    Author: Robert C. Martin<br>
-                    ISBN: 0135974445<br>
-                    <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
-                </p>
-            </div>
-            <div class="reflection">
-                Planning to revisit the sections about code smells and refactoring practices.
-            </div>
-        </div>
-        
-        <div class="book">
-            <img class="cover" src="https://m.media-amazon.com/images/I/71f1jieYHNL._SL1043_.jpg"
-                alt="The Pragmatic Programmer Cover">
-            <div class="book-info">
-                <h3>The Pragmatic Programmer</h3>
-                <p class="meta">
-                    Author: Andrew Hunt & David Thomas<br>
-                    ISBN: 0135957052<br>
-                    <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
-                </p>
-            </div>
-            <div class="reflection">
-                Planning to revisit the sections about code smells and refactoring practices.
-            </div>
-        </div>
-        
-        <div class="book">
-            <img class="cover" src="https://m.media-amazon.com/images/I/41FS+-iUXiL.jpg"
-                alt="The Object-Oriented Thought Proces Cover">
-            <div class="book-info">
-                <h3>The Object-Oriented Thought Proces</h3>
-                <p class="meta">
-                    Author: Matt Weisfeld<br>
-                    ISBN: 9780321861276<br>
-                    <a href="https://www.amazon.com/dp/0132350882" target="_blank">Amazon Link</a>
-                </p>
-            </div>
-            <div class="reflection">
-                Planning to revisit the sections about code smells and refactoring practices.
-            </div>
-        </div>
 
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
+        }
+
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            content.classList.toggle('hidden');
+            button.querySelector('span').textContent = content.classList.contains('hidden') ? '►' : '▼';
         }
     </script>
 </body>
