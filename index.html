@@ -6,12 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Developer Reading List</title>
     <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --card-bg: #fafafa;
+            --border-color: #dddddd;
+            --reflection-bg: #ffffff;
+        }
+
+        body.dark-mode {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333333;
+            --reflection-bg: #1e1e1e;
+        }
+
         body {
             font-family: system-ui, sans-serif;
             max-width: 800px;
             margin: 2rem auto;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
+            background-color: var(--bg-color);
         }
 
         h1,
@@ -27,10 +44,10 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1.5rem;
-            border: 1px solid #ddd;
+            border: 1px solid var(--border-color);
             border-radius: 10px;
             padding: 1rem;
-            background: #fafafa;
+            background: var(--card-bg);
             margin-bottom: 1rem;
             align-items: flex-start;
         }
@@ -49,18 +66,31 @@
         }
 
         .reflection {
-            background: #fff;
-            border-top: 1px solid #eee;
+            background: var(--reflection-bg);
+            border-top: 1px solid var(--border-color);
             padding: 1rem 1.2rem;
             border-left: 4px solid #4caf50;
             width: 100%;
             margin-top: 1rem;
+        }
+
+        .dark-mode-toggle {
+            display: block;
+            margin: 1rem auto;
+            padding: 0.5rem 1rem;
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
     <h1>📚 Developer Reading List</h1>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
 
     <section>
         <p>
@@ -96,5 +126,11 @@
             </div>
         </div>
 
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
 </body>
+
 </html>
